@@ -2,7 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+body {
+  /* background-image: url('/grid-1.svg'); */
+  /* background-image: #FEFBEC; */
+
+  background: #FEFBEC url('data:image/svg+xml,\
+  <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"         fill-opacity=".07" >\
+           <rect x="200" width="200" height="200" />\
+           <rect y="200" width="200" height="200" />\
+           </svg>');
+background-size: 30px 30px;
+  color: #68676A;
+
+}
+
+input[type="text"],
+textarea {
+  @apply border-2 rounded-full p-1
+}
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -30,4 +49,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
