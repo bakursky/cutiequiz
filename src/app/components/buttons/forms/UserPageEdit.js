@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import SubmitButton from "../SubmitButton";
-import { savePageSettings } from "./actions/SavePageSettings";
 import Link from "next/link";
 import { useState } from "react";
 import { set } from "mongoose";
 import { signIn, signOut, useSession } from "next-auth/react"
+import { savePageSettings } from "@/actions/savePageSettings";
 
 
 export default function UserPageEdit({ page, user }) {
