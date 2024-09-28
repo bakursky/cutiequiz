@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import SubmitButton from "../SubmitButton";
-import { savePageSettings } from "@/actions/SavePageSettings";
+import { savePageSettings } from "./actions/SavePageSettings";
 import Link from "next/link";
 import { useState } from "react";
 import { set } from "mongoose";
