@@ -8,12 +8,13 @@ import { redirect } from "next/navigation";
 export default async function LoginPage() {
     const session = await getServerSession(authOptions)
 
-    const page = await Page.findOne({ owner: session?.user?.email })
-    if (page) {
-        return (
-            redirect('/account')
-        )
-    }
+    //fixing vercel build
+    // const page = await Page.findOne({ owner: session?.user?.email })
+    // if (page) {
+    //     return (
+    //         redirect('/account')
+    //     )
+    // }
 
     return (
         <div className="flex items-center justify-center h-screen">
