@@ -4,17 +4,18 @@ import { authOptions } from "../api/auth/[...nextauth]/route.js";
 import Logout from "../components/buttons/Logout";
 import { Page } from "@/models/page"
 import { redirect } from "next/navigation";
+import mongoose from "mongoose";
 
 export default async function LoginPage() {
     const session = await getServerSession(authOptions)
-
-    //fixing vercel build
-    // const page = await Page.findOne({ owner: session?.user?.email })
-    // if (page) {
-    //     return (
-    //         redirect('/account')
-    //     )
-    // }
+    mongoose.connect(process.env.MONGODB_URI)
+    // fixing vercel build
+    const page = await Page.findOne({ owner: session?.user?.email })
+    if (page) {
+        return (
+            redirect('/account')
+        )
+    }
 
     return (
         <div className="flex items-center justify-center h-screen">
