@@ -10,14 +10,15 @@ import cloneDeep from "clone-deep"
 export default async function AccountPage(...rest){
     
     const session = await getServerSession(authOptions)
-    // if (!session){
-    //     return redirect('/')
-    // }
+    if (!session){
+        return redirect('/')
+    }
 
     mongoose.connect(process.env.MONGODB_URI)
     const page = await Page.findOne({owner: session?.user?.email})
 
-    const leanPage = cloneDeep(page.toJSON())
+    console.log(page)
+    const leanPage = cloneDeep(page.toObject())
     leanPage._id = leanPage._id.toString()
 
     if (page){
