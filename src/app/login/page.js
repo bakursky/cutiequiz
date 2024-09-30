@@ -29,7 +29,7 @@ export default async function LoginPage() {
             )}
 
             {!!session && (
-                <p>Hello, {session?.user?.name}. Now you can {<Logout />}</p>
+                redirect('/account')
             )}
 
 <LoginWithGoogle />
