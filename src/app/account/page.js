@@ -17,13 +17,13 @@ export default async function AccountPage(...rest){
     mongoose.connect(process.env.MONGODB_URI)
     const page = await Page.findOne({owner: session?.user?.email})
 
-    console.log(page)
-    const leanPage = cloneDeep(page.toObject())
-    leanPage._id = leanPage._id.toString()
+    // console.log(page)
+    // const leanPage = cloneDeep(page.toObject())
+    // leanPage._id = leanPage._id.toString()
 
     if (page){
         return(
-            <UserPageEdit page={leanPage} user={session.user}/>
+            <UserPageEdit page={page} user={session.user}/>
         )
     }
 
